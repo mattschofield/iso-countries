@@ -92,6 +92,16 @@ describe('ISO Country find methods', function() {
     iso.findCountriesByRegion('Asia').length.should.above(0);
   });
 
+  it('should have a `findDiallingCodeByISOCode` function', function() {
+    iso.findDiallingCodeByISOCode.should.be.an.instanceOf(Function);
+    iso.findDiallingCodeByISOCode('GB').should.be.equal("44");
+    iso.findDiallingCodeByISOCode('SE').should.be.equal("46");
+  })
+
+});
+
+describe('ISO Country get methods', function () {
+
   it('should have a `getSimpleCountryList` function', function() {
     iso.getSimpleCountryList.should.be.an.instanceOf(Function);
     iso.getSimpleCountryList().length.should.be.eql(246);
@@ -103,7 +113,7 @@ describe('ISO Country find methods', function() {
     iso.getAllISOCodes().should.be.an.instanceOf(Array).with.length(246);
   })
 
-});
+})
 
 describe('ISO Currencies find methods', function() {
 

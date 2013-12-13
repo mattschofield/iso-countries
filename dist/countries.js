@@ -6172,6 +6172,10 @@
     });
   }
 
+  iso.findDiallingCodeByISOCode = function(isoCode) {
+    return iso.countries[isoCode].tel;
+  }
+
   iso.findCurrency = function(currency) {
     for (var prop in iso.currencies) {
       if (iso.currencies.hasOwnProperty(prop)) {
